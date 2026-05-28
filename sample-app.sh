@@ -18,5 +18,5 @@ echo "CMD python /home/myapp/sample_app.py" >> tempdir/Dockerfile
 
 cd tempdir
 docker build -t sampleapp .
-docker run -t -d -p 5050:5050 --name samplerunning sampleapp
+docker run -t -d --ulimit nproc=65535 -p 5050:5050 --name samplerunning sampleapp
 docker ps -a 
