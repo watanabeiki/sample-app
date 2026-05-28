@@ -9,7 +9,7 @@ cp -r templates/* tempdir/templates/.
 cp -r static/* tempdir/static/.
 
 echo "FROM python" >> tempdir/Dockerfile
-echo "RUN pip install --no-cache-dir flask --progress-bar off" >> tempdir/Dockerfile
+echo "RUN pip install --no-cache-dir flask --progress-bar off flask" >> tempdir/Dockerfile
 echo "COPY  ./static /home/myapp/static/" >> tempdir/Dockerfile
 echo "COPY  ./templates /home/myapp/templates/" >> tempdir/Dockerfile
 echo "COPY  sample_app.py /home/myapp/" >> tempdir/Dockerfile
